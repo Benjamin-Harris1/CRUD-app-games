@@ -94,7 +94,7 @@ function showGame(gameObject) {
         <h3>${gameObject.title}</h3>
             <img src="${gameObject.image}" />
             <p>${gameObject.body}</p>
-            <p>${gameObject.genre}</p>
+            <p>Genre: ${gameObject.genre}</p>
             <div class="btns">
                 <button class="btn-delete">Delete</button>
                 <button class="btn-update">Update</button>
