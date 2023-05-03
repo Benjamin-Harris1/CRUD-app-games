@@ -1,3 +1,5 @@
+// HELPER //
+
 function prepareGameData(dataObject) {
   const gameArray = [];
   for (const key in dataObject) {

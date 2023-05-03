@@ -2,6 +2,8 @@ import { prepareGameData } from "./helper.js";
 
 const endpoint = "https://database-fce4a-default-rtdb.europe-west1.firebasedatabase.app/";
 
+// REST-SERVICES //
+
 async function getGames() {
   const response = await fetch(`${endpoint}/games.json`);
   const data = await response.json();

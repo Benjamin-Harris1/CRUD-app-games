@@ -115,6 +115,6 @@ async function updateGamesGrid() {
   showGames(games);
 }
 
-// REST-SERVICES //
 
-// HELPER //
+
+
