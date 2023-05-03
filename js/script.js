@@ -14,6 +14,8 @@ function start() {
   document.querySelector("#form-update-game-post").addEventListener("submit", updateGameClicked);
   document.querySelector("#form-delete-game-post").addEventListener("submit", deleteGameClicked);
   document.querySelector("#form-delete-game-post .btn-cancel").addEventListener("click", deleteCancelClicked);
+  document.querySelector("#input-search").addEventListener("keyup", inputSearchChanged);
+  document.querySelector("#input-search").addEventListener("search", inputSearchChanged);
 }
 
 function showCreateGameDialog() {
@@ -32,6 +34,9 @@ async function createGameClicked(event) {
   if (response.ok) {
     console.log("created");
     updateGamesGrid();
+  } else {
+    console.log(response.status, response.statusText);
+    console.log("Error, please try again😎");
   }
 }
 
@@ -47,6 +52,9 @@ async function updateGameClicked(event) {
   if (response.ok) {
     console.log("UPDATED");
     updateGamesGrid();
+  } else {
+    console.log(response.status, response.statusText);
+    console.log("Error, please try again😎");
   }
 }
 
@@ -58,6 +66,9 @@ async function deleteGameClicked(event) {
   if (response.ok) {
     console.log("Deleted");
     updateGamesGrid();
+  } else {
+    console.log(response.status, response.statusText);
+    console.log("Error, please try again😎");
   }
 }
 
@@ -88,7 +99,7 @@ function showGame(gameObject) {
             </div>
         </article>
     `;
-  document.querySelector("#games").insertAdjacentHTML("beforeend", html); // append html to the DOM - section#posts
+  document.querySelector("#games").insertAdjacentHTML("beforeend", html);
 
   document.querySelector("#games article:last-child .btn-delete").addEventListener("click", () => deleteClicked(gameObject));
   document.querySelector("#games article:last-child .btn-update").addEventListener("click", () => updateClicked(gameObject));
@@ -115,6 +126,27 @@ async function updateGamesGrid() {
   showGames(games);
 }
 
+// SEARCH AND FILTER FUNCTIONS //
 
+function inputSearchChanged(event) {
+  const value = event.target.value;
+  const gamesToShow = searchGames(value);
+  showGames(gamesToShow);
+}
 
+function searchGames(searchValue) {
+  return games.filter((game) => game.title.toLowerCase().includes(searchValue.toLowerCase()));
+}
 
+function compareGenre(game1, game2) {
+  return game1.genre.localeCompare(game2.genre);
+}
+
+function sortByChanged(event) {
+  const selectedValue = event.target.value;
+  if (selectedValue === "genre") {
+    games.sort(compareGenre);
+  }
+
+  showGames(games);
+}
