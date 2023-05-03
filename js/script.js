@@ -41,6 +41,22 @@ function showGame(games) {
     <p></p>${games.body}</p>
     <p>${games.genre}</p>
     </article>
+    <div class="buttons">
+    <button class="button-delete">Delete</button>
+    <button class="button-update">Update</button>
+    </div>
     `;
   document.querySelector("#games").insertAdjacentHTML("beforeend", html);
+}
+
+async function deleteGame(id) {
+  console.log(id);
+  const response = await fetch(`${endpoint}/games/${id}.json`, {
+    method: "DELETE",
+  });
+  return response;
+}
+
+function deleteClicked(gameObject) {
+  document.querySelector("#dialog-delete-game-title");
 }
