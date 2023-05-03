@@ -6,15 +6,16 @@ let games;
 
 window.addEventListener("load", start);
 
-async function start() {
-  games = await getGames();
-  showGames(games);
+function start() {
   updateGamesGrid();
+
+  document.querySelector("#form-delete-game-post").addEventListener("submit", deleteClicked);
+  document.querySelector("#form-delete-game-post .btn-cancel").addEventListener("click", deleteCancelClicked);
 }
 
 function prepareGameData(dataObject) {
   const gameArray = [];
-  for (const key of Object.keys(dataObject)) {
+  for (const key in dataObject) {
     const game = dataObject[key];
     game.id = key;
     gameArray.push(game);
@@ -54,7 +55,7 @@ function showGame(games) {
     `;
   document.querySelector("#games").insertAdjacentHTML("beforeend", html);
 
-  document.querySelector("#games article:last-child .button-delete").addEventListener("click", () => deleteClicked(gameObject));
+  document.querySelector("#games article:last-child .button-delete").addEventListener("click", () => deleteClicked(game));
 }
 
 async function deleteGame(id) {
@@ -68,6 +69,10 @@ function deleteClicked(game) {
   document.querySelector("#dialog-delete-game-title").textContent = game.title;
   document.querySelector("#form-delete-game-post").setAttribute("data-id", game.id);
   document.querySelector("#dialog-delete-game").showModal();
+}
+
+function deleteCancelClicked() {
+  document.querySelector("#dialog-delete-post").close();
 }
 
 async function updateGamesGrid() {
