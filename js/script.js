@@ -1,17 +1,23 @@
 "use strict";
 
-const endpoint = "https://crud-app-games-default-rtdb.europe-west1.firebasedatabase.app/";
+const endpoint = "https://database-fce4a-default-rtdb.europe-west1.firebasedatabase.app/";
+
+let games;
 
 window.addEventListener("load", start);
 
-function start() {}
+async function start() {
+  games = await getGames();
+  showGames(games);
+  updateGamesGrid();
+}
 
 function prepareGameData(dataObject) {
   const gameArray = [];
-  for (const key of dataObject) {
-    const games = dataObject[key];
-    games.id = key;
-    gameArray.push(post);
+  for (const key of Object.keys(dataObject)) {
+    const game = dataObject[key];
+    game.id = key;
+    gameArray.push(game);
   }
   return gameArray;
 }
@@ -19,7 +25,7 @@ function prepareGameData(dataObject) {
 // GAME FUNCTIONS //
 async function getGames() {
   const response = await fetch(`${endpoint}/games.json`);
-  const data = await response.json;
+  const data = await response.json();
   const game = prepareGameData(data);
   return game;
 }
@@ -27,7 +33,7 @@ async function getGames() {
 function showGames(listofGames) {
   document.querySelector("#games").innerHTML = "";
   for (const game of listofGames) {
-    showGames(game);
+    showGame(game);
   }
 }
 
@@ -47,16 +53,24 @@ function showGame(games) {
     </div>
     `;
   document.querySelector("#games").insertAdjacentHTML("beforeend", html);
+
+  document.querySelector("#games article:last-child .button-delete").addEventListener("click", () => deleteClicked(gameObject));
 }
 
 async function deleteGame(id) {
-  console.log(id);
   const response = await fetch(`${endpoint}/games/${id}.json`, {
     method: "DELETE",
   });
   return response;
 }
 
-function deleteClicked(gameObject) {
-  document.querySelector("#dialog-delete-game-title");
+function deleteClicked(game) {
+  document.querySelector("#dialog-delete-game-title").textContent = game.title;
+  document.querySelector("#form-delete-game-post").setAttribute("data-id", game.id);
+  document.querySelector("#dialog-delete-game").showModal();
+}
+
+async function updateGamesGrid() {
+  games = await getGames();
+  showGames(games);
 }
