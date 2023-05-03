@@ -152,6 +152,8 @@ dialog ul {
 }
 dialog p {
   text-align: center;
+  font-size: xx-large;
+  padding-top: 30px;
 }
 
 form {
