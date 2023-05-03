@@ -1,11 +1,11 @@
 body {
     margin: 0;
     font-size: medium;
-    background-color: rgb(151, 68, 0);
+    background-color: #560bad;
 }
 
 header {
-    background-color: black;
+    background-color: #0466c8;
     color: white;
     padding: 2em;
     position: fixed;
@@ -31,9 +31,38 @@ header {
   }
 
   main {
-    background: rgb(250, 107, 23);
+    background:#023e7d;
     padding: 137px 0 0;
   }
+
+  button {
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 8px;
+    color:white;
+    background-color: grey;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    width: 100%;
+    max-width: 380px;
+  }
+  
+h2 {
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    text-align: center;
+}
+
+html {
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+}
   
 
 /* -- Grid items -- */
@@ -71,7 +100,7 @@ header {
   .grid-item {
     box-shadow: 2px 2px 8px black;
     padding: 1.5em;
-    background-color: white;
+    background-color: #a3cef1;
     cursor: pointer;
   }
  
@@ -83,18 +112,19 @@ header {
   }
 
 
-  /* nye shit */ 
+  /* Dialog styling */ 
   
   
   dialog {
-    border-color: var(--green);
-    background-color: var(--light-green);
-    width: 65vw;
-    padding: 2em 1em;
+    border-color: black;
+    background-color: orange;
+    width: 40vw;
+    padding: 1em 2em;
+    font-size: medium;
 }
 
 dialog::backdrop {
-    background: rgb(172, 198, 201, 0.8);
+    background: rgba(248, 231, 200, 0.8);
 }
 
 .dialog-grid {
@@ -112,3 +142,30 @@ dialog ul {
 dialog p {
     text-align: center;
 }
+
+/* tools */ 
+
+.tools-grid {
+  background-color: #e9ecef;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  padding: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  justify-content: space-between;
+  justify-items: stretch;
+}
+@media (min-width: 600px) {
+  .tools-grid {
+      grid-template-columns: auto auto;
+      margin: 1em;
+  }
+}
+
+.tools-grid input {
+  width: 350px;
+  max-width: 100%;
+  display: inline;
+}
+
+
