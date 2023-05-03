@@ -8,7 +8,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>Games APP with rest API</h2>
+    <header>
+      <h1>Games APP with REST API</h1>
+      <button id="button-create-post"></button>
+    </header>
+    <main>
+      <section class="tools-grid">
+        <label for="select-sort-by">
+          Sort by genre:
+          <select id="select-sort-by">
+            <option value="" selected>Not selected</option>
+            <option value="genre">Genre</option>
+            <option value="something">Something else</option>
+          </select>
+        </label>
+        <div>
+          <label for="input-search">Search</label>
+          <input type="search" id="input-search" placeholder="Search by title" />
+        </div>
+      </section>
+      <section id="games" class="grid-container"></section>
+    </main>
+
     <script src="/js/script.js"></script>
   </body>
 </html>
