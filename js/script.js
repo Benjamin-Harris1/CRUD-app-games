@@ -40,6 +40,20 @@ function showGame(games) {
     <img src = "${games.image}"
     <p>${games.body}</p>
     </article>
+    <div class="buttons">
+    <button class="button-delete">Delete</button>
+    <button class="button-update">Update</button>
+    </div>
     `;
   document.querySelector("#games").insertAdjacentHTML("beforeend", html);
 }
+
+async function deleteGame(id) {
+  console.log(id);
+  const response = await fetch(`${endpoint}/games/${id}.json`, {
+    method: "DELETE",
+  });
+  return response;
+}
+
+function deleteClicked(gameObject) {}
