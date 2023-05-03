@@ -5,7 +5,6 @@ body {
 
 header {
   background: linear-gradient(to right, #4a75aa, #2e3950);
-
   object-fit: fill;
   color: white;
   padding: 1em;
@@ -113,15 +112,16 @@ html {
 .grid-item {
   box-shadow: 2px 2px 8px black;
   padding: 1.5em;
-  background-color: #a3cef1;
+  background-color: #79a2d4;
   cursor: pointer;
 }
 
 .grid-item img {
   width: 100%;
   height: 400px;
-  object-fit: contain;
-  border-radius: 8px;
+  object-fit: cover;
+  border-radius: 800px;
+  align-self: center;
 }
 
 /* Dialog styling */
@@ -135,7 +135,7 @@ dialog {
 }
 
 dialog::backdrop {
-  background: rgba(245, 244, 243, 0.8);
+  background: rgba(117, 113, 109, 0.61);
 }
 
 .dialog-grid {
@@ -163,7 +163,7 @@ form {
 }
 
 footer {
-  background-color: #0466c8;
+  background: linear-gradient(to right, #4a75aa, #2e3950);
   color: black;
   padding: 2em;
   text-align: center;
@@ -174,7 +174,7 @@ footer {
 /* tools */
 
 .tools-grid {
-  background-color: #6e9afa;
+  background-color: #5669926c;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   padding: 2em;
   display: grid;
