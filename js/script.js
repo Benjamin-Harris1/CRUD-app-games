@@ -24,8 +24,9 @@ async function getGames() {
   return game;
 }
 
-function showGames(listofObjects) {
-  for (const game of listofObjects) {
+function showGames(listofGames) {
+  document.querySelector("#games").innerHTML = "";
+  for (const game of listofGames) {
     showGames(game);
   }
 }
