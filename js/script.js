@@ -1,6 +1,7 @@
 "use strict";
 
 import { getGames, createGame, deleteGame, updateGame } from "./rest-service.js";
+import { compareGenre, compareTitle } from "./helper.js";
 
 let games;
 
@@ -137,14 +138,6 @@ function inputSearchChanged(event) {
 
 function searchGames(searchValue) {
   return games.filter((game) => game.title.toLowerCase().includes(searchValue.toLowerCase()));
-}
-
-function compareGenre(game1, game2) {
-  return game1.genre.localeCompare(game2.genre);
-}
-
-function compareTitle(game1, game2) {
-  return game1.title.localeCompare(game2.title);
 }
 
 function sortByChanged(event) {
