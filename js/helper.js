@@ -1,9 +1,11 @@
 function prepareGameData(dataObject) {
   const gameArray = [];
   for (const key in dataObject) {
-    const game = dataObject[key];
-    game.id = key;
-    gameArray.push(game);
+    const object = dataObject[key];
+    object.id = key;
+    gameArray.push(object);
   }
   return gameArray;
 }
+
+export { prepareGameData };
