@@ -25,9 +25,10 @@ async function createGameClicked(event) {
   const title = form.title.value;
   const body = form.body.value;
   const image = form.image.value;
+  const genre = form.genre.value;
   form.reset();
 
-  const response = await createGame(title, body, image);
+  const response = await createGame(title, body, image, genre);
   if (response.ok) {
     console.log("created");
     updateGamesGrid();
@@ -39,11 +40,12 @@ async function updateGameClicked(event) {
   const title = form.title.value;
   const body = form.body.value;
   const image = form.image.value;
+  const genre = form.genre.value;
   const id = form.getAttribute("data-id");
 
-  const response = await updateGame(id, title, body, image);
+  const response = await updateGame(id, title, body, image, genre);
   if (response.ok) {
-    console.log("UPDATED BITCH");
+    console.log("UPDATED");
     updateGamesGrid();
   }
 }
@@ -103,6 +105,7 @@ function updateClicked(gameObject) {
   updateForm.title.value = gameObject.title;
   updateForm.body.value = gameObject.body;
   updateForm.image.value = gameObject.image;
+  updateForm.genre.value = gameObject.genre || "";
   updateForm.setAttribute("data-id", gameObject.id);
   document.querySelector("#dialog-update-game-post").showModal();
 }
@@ -121,8 +124,8 @@ async function getGames() {
   return games;
 }
 
-async function createGame(title, body, image) {
-  const newGame = { title, body, image };
+async function createGame(title, body, image, genre) {
+  const newGame = { title, body, image, genre };
   const json = JSON.stringify(newGame);
   const response = await fetch(`${endpoint}/games.json`, {
     method: "POST",
@@ -138,9 +141,9 @@ async function deleteGame(id) {
   return response;
 }
 
-async function updateGame(id, title, body, image) {
-  const gameToUpdate = { title, body, image };
-  const json = json.stringify(gameToUpdate);
+async function updateGame(id, title, body, image, genre) {
+  const gameToUpdate = { title, body, image, genre };
+  const json = JSON.stringify(gameToUpdate);
   const response = await fetch(`${endpoint}/games/${id}.json`, {
     method: "PUT",
     body: json,
