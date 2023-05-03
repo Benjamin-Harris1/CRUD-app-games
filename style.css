@@ -1,17 +1,35 @@
 body {
-margin: 0
+    margin: 0;
+    font-size: medium;
+    background-color: aquamarine;
 }
 
 
 header {
     background-color: black;
-    color: white;
+    color: rgb(238, 12, 12);
     padding: 2em;
     position: fixed;
+    text-align: center;
     top: 0;
     left: 0;
     right: 0;
     z-index: 2;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
   }
   
+  footer {
+    background-color: black;
+    padding: 1em;
+    text-align: center;
+    color: white;
+  }
   
+/* -- Grid items -- */
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 1em;
+  }
