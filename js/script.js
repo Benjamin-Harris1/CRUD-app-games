@@ -47,6 +47,8 @@ function showGame(games) {
     </div>
     `;
   document.querySelector("#games").insertAdjacentHTML("beforeend", html);
+
+  document.querySelector("#games article:last-child .button-delete").addEventListener("click", () => deleteClicked(gameObject));
 }
 
 async function deleteGame(id) {
@@ -58,5 +60,7 @@ async function deleteGame(id) {
 }
 
 function deleteClicked(gameObject) {
-  document.querySelector("#dialog-delete-game-title");
+  document.querySelector("#dialog-delete-game-title").textContent = gameObject.title;
+  document.querySelector("#form-delete-game-post").setAttribute("data-id", gameObject.id);
+  document.querySelector("#dialog-delete-game").showModal();
 }
