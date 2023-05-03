@@ -88,7 +88,7 @@ function showGame(gameObject) {
             </div>
         </article>
     `;
-  document.querySelector("#games").insertAdjacentHTML("beforeend", html); // append html to the DOM - section#posts
+  document.querySelector("#games").insertAdjacentHTML("beforeend", html);
 
   document.querySelector("#games article:last-child .btn-delete").addEventListener("click", () => deleteClicked(gameObject));
   document.querySelector("#games article:last-child .btn-update").addEventListener("click", () => updateClicked(gameObject));
@@ -115,6 +115,7 @@ async function updateGamesGrid() {
   showGames(games);
 }
 
-
-
-
+// SEARCH AND FILTER FUNCTIONS //
+function searchGames(searchValue) {
+  return games.filter((games) => games.title.toLowercase().includes(searchValue.toLowercase()));
+}
