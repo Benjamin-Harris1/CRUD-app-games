@@ -25,7 +25,6 @@ async function createGameClicked(event) {
   const title = form.title.value;
   const body = form.body.value;
   const image = form.image.value;
-  createGame(title, body, image);
   form.reset();
 
   const response = await createGame(title, body, image);
