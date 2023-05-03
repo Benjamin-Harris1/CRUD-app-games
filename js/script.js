@@ -16,6 +16,7 @@ function start() {
   document.querySelector("#form-delete-game-post .btn-cancel").addEventListener("click", deleteCancelClicked);
   document.querySelector("#input-search").addEventListener("keyup", inputSearchChanged);
   document.querySelector("#input-search").addEventListener("search", inputSearchChanged);
+  document.querySelector("#select-sort-by").addEventListener("change", sortByChanged);
 }
 
 function showCreateGameDialog() {
