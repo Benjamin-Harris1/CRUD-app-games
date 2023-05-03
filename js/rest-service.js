@@ -31,4 +31,5 @@ async function updateGame(id, title, body, image) {
     method: "PUT",
     body: json,
   });
+  return response;
 }
