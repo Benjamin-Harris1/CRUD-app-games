@@ -36,8 +36,9 @@ function showGame(games) {
     `
     <article class="grid-item">
     <p>${games.title}</p>
-    <img src = "${games.image}"
-    <p>${games.body}</p>
+    <img src = "${games.image}">
+    <p></p>${games.body}</p>
+    <p>${games.genre}</p>
     </article>
     `;
   document.querySelector("#games").insertAdjacentHTML("beforeend", html);
