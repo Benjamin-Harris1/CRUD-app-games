@@ -30,6 +30,43 @@
       <section id="games" class="grid-container"></section>
     </main>
 
+    <!--Create game post -->
+    <dialog id="dialog-create-game-post">
+      <h2>Create game post</h2>
+      <form id="form-create-game-post" method="dialog">
+        <label for="title">Title:</label>
+        <input type="text" id="title" placeholder="Type the title of your game" />
+        <label for="body">Body:</label>
+        <input type="text" id="body" placeholder="Type the description of your game" />
+        <label for="image">Image:</label>
+        <input type="url" id="image" name="image" placeholder="Paste image URL of your game" />
+      </form>
+    </dialog>
+
+    <!--Update game post-->
+    <dialog id="dialog-update-game-post">
+      <h2>Update game post</h2>
+      <form id="form-update-game-post">
+        <label for="title-update">Title:</label>
+        <input type="text" id="title" placeholder="Type a new title of your game" />
+        <label for="body-update">Body:</label>
+        <input type="text" id="body" placeholder="Type a new description of your game" />
+        <label for="image">Image:</label>
+        <input type="url" id="image" name="image" placeholder="Paste a new image URL of your game" />
+        <button>Update post</button>
+      </form>
+    </dialog>
+
+    <!--Delete game post-->
+    <dialog id="dialog-delete-game-post" open>
+      <h2>Are you sure you want to delete this?</h2>
+      <p id="dialog-delete-game-post-title">Title of post</p>
+      <form id="form-delete-game-post" method="dialog">
+        <button type="button" class="btn-cancel">No</button>
+        <button>Yes</button>
+      </form>
+    </dialog>
+
     <script src="/js/script.js"></script>
   </body>
 </html>
