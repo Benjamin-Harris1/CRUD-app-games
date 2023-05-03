@@ -150,3 +150,9 @@ function sortByChanged(event) {
 
   showGames(games);
 }
+
+// SCROLL TO TOP FUNCTION //
+
+document.querySelector("#top-btn").addEventListener("click", () => {
+  document.documentElement.scrollTop = 0;
+});
