@@ -38,15 +38,15 @@ function showGames(listofGames) {
   }
 }
 
-function showGame(games) {
+function showGame(gameObject) {
   const html =
     /*html*/
     `
     <article class="grid-item">
-    <p>${games.title}</p>
-    <img src = "${games.image}">
-    <p></p>${games.body}</p>
-    <p>${games.genre}</p>
+    <p>${gameObject.title}</p>
+    <img src = "${gameObject.image}">
+    <p></p>${gameObject.body}</p>
+    <p>${gameObject.genre}</p>
     </article>
     <div class="buttons">
     <button class="button-delete">Delete</button>
@@ -55,7 +55,7 @@ function showGame(games) {
     `;
   document.querySelector("#games").insertAdjacentHTML("beforeend", html);
 
-  document.querySelector("#games article:last-child .button-delete").addEventListener("click", () => deleteClicked(game));
+  document.querySelector("#games article:last-child .button-delete").addEventListener("click", () => deleteClicked(gameObject));
 }
 
 async function deleteGame(id) {
@@ -65,14 +65,14 @@ async function deleteGame(id) {
   return response;
 }
 
-function deleteClicked(game) {
+function deleteClicked(games) {
   document.querySelector("#dialog-delete-game-title").textContent = game.title;
   document.querySelector("#form-delete-game-post").setAttribute("data-id", game.id);
   document.querySelector("#dialog-delete-game").showModal();
 }
 
 function deleteCancelClicked() {
-  document.querySelector("#dialog-delete-post").close();
+  document.querySelector("#dialog-delete-game-post").close();
 }
 
 async function updateGamesGrid() {
