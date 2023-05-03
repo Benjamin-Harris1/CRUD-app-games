@@ -56,4 +56,6 @@ async function deleteGame(id) {
   return response;
 }
 
-function deleteClicked(gameObject) {}
+function deleteClicked(gameObject) {
+  document.querySelector("#dialog-delete-game-title");
+}
