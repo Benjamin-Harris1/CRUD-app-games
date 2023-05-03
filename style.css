@@ -14,7 +14,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 9999;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
   }
   
@@ -25,6 +25,19 @@ header {
     color: white;
   }
   
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  main {
+    background: var(--light-green);
+    animation: fadeIn 1.5s;
+    padding: 137px 0 0;
+  }
+  
+
 /* -- Grid items -- */
 
   .grid-container {
@@ -32,4 +45,13 @@ header {
     grid-template-columns: 1fr;
     gap: 1em;
     padding: 1em;
+  }
+
+  .grid-item {
+    box-shadow: 1px 1px 8px black;
+    padding: 1.5em;
+    background-color: white;
+    transition: 0.5s;
+    animation: fadeIn 0.5s;
+    cursor: pointer;
   }
