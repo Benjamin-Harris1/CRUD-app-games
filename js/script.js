@@ -55,7 +55,10 @@ function showGame(gameObject) {
     `;
   document.querySelector("#games").insertAdjacentHTML("beforeend", html);
 
-  document.querySelector("#games article:last-child .button-delete").addEventListener("click", () => deleteClicked(gameObject));
+  const deleteButton = document.querySelector("#games article:last-child .button-delete");
+  if (deleteButton !== null) {
+    deleteButton.addEventListener("click", () => deleteClicked(gameObject));
+  }
 }
 
 async function deleteGame(id) {
@@ -65,10 +68,10 @@ async function deleteGame(id) {
   return response;
 }
 
-function deleteClicked(games) {
-  document.querySelector("#dialog-delete-game-title").textContent = game.title;
-  document.querySelector("#form-delete-game-post").setAttribute("data-id", game.id);
-  document.querySelector("#dialog-delete-game").showModal();
+function deleteClicked(gameObject) {
+  document.querySelector("#dialog-delete-game-post-title").textContent = gameObject.title;
+  document.querySelector("#form-delete-game-post").setAttribute("data-id", gameObject.id);
+  document.querySelector("#dialog-delete-game-post").showModal();
 }
 
 function deleteCancelClicked() {
