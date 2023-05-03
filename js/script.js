@@ -137,3 +137,16 @@ function inputSearchChanged(event) {
 function searchGames(searchValue) {
   return games.filter((game) => game.title.toLowerCase().includes(searchValue.toLowerCase()));
 }
+
+function compareGenre(game1, game2) {
+  return game1.genre.localeCompare(game2.genre);
+}
+
+function sortByChanged(event) {
+  const selectedValue = event.target.value;
+  if (selectedValue === "genre") {
+    games.sort(compareGenre);
+  }
+
+  showGames(games);
+}
