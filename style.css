@@ -66,6 +66,8 @@ h3 {
   text-align: center;
   font-size:x-large;
   font-family:Georgia, 'Times New Roman', Times, serif;
+  border: 2px 2px 2px 2px;
+  border-color: black;
 }
 
 article.grid-item {
@@ -169,6 +171,12 @@ form {
   font-size: larger;
 }
 
+footer {
+  background-color: #0466c8;
+  color: black;
+  padding: 1em;
+  text-align: center;
+}
 
 /* tools */ 
 
