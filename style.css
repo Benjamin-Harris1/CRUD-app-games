@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-size: medium;
-    background-color: rgb(98, 83, 228);
+    background-color: rgb(151, 68, 0);
 }
 
 header {
@@ -13,6 +13,7 @@ header {
     left: 0;
     right: 0;
     z-index: 9999;
+    text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
   }
   
@@ -30,7 +31,7 @@ header {
   }
 
   main {
-    background: rgb(167, 1, 218);
+    background: rgb(250, 107, 23);
     padding: 137px 0 0;
   }
   
@@ -44,13 +45,33 @@ header {
     padding: 1em;
   }
 
+
+  @media (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+  .grid-item:hover {
+    box-shadow: 0 8px 16px 2px ;
+  }
+
   .grid-item {
     box-shadow: 2px 2px 8px black;
-    box-shadow: 0 8px 16px 8px ;
     padding: 1.5em;
     background-color: white;
-    transition: 0.5s;
-    animation: fadeIn 0.5s;
     cursor: pointer;
   }
  
@@ -60,3 +81,34 @@ header {
     object-fit: contain;
     border-radius: 8px;
   }
+
+
+  /* nye shit */ 
+  
+  
+  dialog {
+    border-color: var(--green);
+    background-color: var(--light-green);
+    width: 65vw;
+    padding: 2em 1em;
+}
+
+dialog::backdrop {
+    background: rgb(172, 198, 201, 0.8);
+}
+
+.dialog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+dialog h4 {
+    margin-bottom: 0;
+}
+dialog ul {
+    margin: 0.5em 0 1em;
+    padding-inline-start: 1.5em;
+}
+dialog p {
+    text-align: center;
+}
