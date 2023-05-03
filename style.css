@@ -188,7 +188,7 @@ footer {
 @media (min-width: 600px) {
   .tools-grid {
     grid-template-columns: auto auto;
-    margin: 1em;
+    margin-top: 1em;
   }
 }
 
