@@ -36,6 +36,7 @@
 
     <!--Create game post -->
     <dialog id="dialog-create-game-post">
+      <button id="dialog-close-button">X</button>
       <h2>Add game:</h2>
       <form id="form-create-game-post" method="dialog">
         <label for="title">Title:</label>
@@ -46,12 +47,13 @@
         <input type="text" id="genre" name="genre" placeholder="Type the genre of your game" required />
         <label for="image">Image:</label>
         <input type="url" id="image" name="image" placeholder="Paste image URL of your game" />
-        <button>Create game post</button>
+        <button id="create-game-button">Create game post</button>
       </form>
     </dialog>
 
     <!--Update game post-->
     <dialog id="dialog-update-game-post">
+      <button id="dialog-close-button">X</button>
       <h2>Update game post</h2>
       <form id="form-update-game-post">
         <label for="title-update">Title:</label>
@@ -62,7 +64,7 @@
         <input type="text" id="genre-update" name="genre" placeholder="Type a new genre of your game" />
         <label for="image-update">Image:</label>
         <input type="url" id="image-update" name="image" placeholder="Paste a new image URL of your game" />
-        <button>Update post</button>
+        <button id="update-game-button">Update post</button>
       </form>
     </dialog>
 
@@ -71,7 +73,7 @@
       <h2>Are you sure you want to delete this?</h2>
       <p id="dialog-delete-game-post-title">Title of post</p>
       <form id="form-delete-game-post" method="dialog">
-        <button>Yes</button>
+        <button id="yes-button">Yes</button>
         <button type="button" class="btn-cancel">No</button>
       </form>
     </dialog>
