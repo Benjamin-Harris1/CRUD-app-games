@@ -63,7 +63,6 @@ async function updateGameClicked(event) {
 async function deleteGameClicked(event) {
   const id = event.target.getAttribute("data-id");
   deleteGame(id);
-
   const response = await deleteGame(id);
   if (response.ok) {
     console.log("Deleted");
@@ -96,8 +95,8 @@ function showGame(gameObject) {
             <p>${gameObject.body}</p>
             <p>Genre: ${gameObject.genre}</p>
             <div class="btns">
-                <button class="btn-delete">Delete</button>
-                <button class="btn-update">Update</button>
+            <button class="btn-update">Update</button>
+            <button class="btn-delete">Delete</button>
             </div>
         </article>
     `;

@@ -18,10 +18,12 @@ header {
 }
 
 footer {
-  background-color: black;
-  padding: 1em;
-  text-align: center;
+  background: linear-gradient(to right, #4a75aa, #2e3950);
   color: white;
+  padding: 2em;
+  text-align: center;
+  font-size: larger;
+  font-weight: 750;
 }
 
 img {
@@ -36,20 +38,35 @@ main {
   background: #3e4852;
   padding: 137px 0 0;
 }
+/* BUTTON STYLING */
 
-button {
+button,
+.btn-delete,
+.btn-update,
+#top-btn,
+#button-create-post {
+  font-size: 1rem;
   font-weight: 300;
-  font-size: 1em;
-  text-align: center;
-  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #4caf50;
   color: white;
-  background-color: rgb(126, 125, 128);
-  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 0.1em;
   padding: 1em 1em;
   margin-top: 1em;
   width: 100%;
-  max-width: 380px;
-  border-radius: 1em;
+  max-width: 500px;
+}
+
+button:hover,
+.btn-delete:hover,
+.btn-update:hover,
+#top-btn:hover,
+#button-create-post:hover {
+  background-color: #2e8b57;
 }
 
 h2 {
@@ -127,33 +144,60 @@ html {
 /* Dialog styling */
 
 dialog {
-  border-color: black;
-  background-color: rgb(114, 196, 252);
-  width: 40vw;
-  padding: 1em 2em;
-  font-size: medium;
+  position: fixed;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+#dialog-delete-game-post {
+  position: fixed;
+  top: 20%;
 }
 
 dialog::backdrop {
   background: rgba(117, 113, 109, 0.61);
 }
 
-.dialog-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+dialog h2 {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+dialog form {
+  display: flex;
+  flex-direction: column;
+}
+dialog label {
+  margin-bottom: 5px;
 }
 
-dialog h4 {
-  margin-bottom: 0;
-}
-dialog ul {
-  margin: 0.5em 0 1em;
-  padding-inline-start: 1.5em;
+dialog input[type="text"],
+dialog input[type="url"],
+dialog select {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 dialog p {
   text-align: center;
-  font-size: xx-large;
-  padding-top: 30px;
+  font-size: x-large;
+}
+dialog button {
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 form {
@@ -164,26 +208,17 @@ form {
   font-size: larger;
 }
 
-footer {
-  background: linear-gradient(to right, #4a75aa, #2e3950);
-  color: black;
-  padding: 2em;
-  text-align: center;
-  font-size: larger;
-  font-weight: 750;
-}
-
 /* tools */
 
 .tools-grid {
   background-color: #5669926c;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   padding: 2em;
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr;
   gap: 1em;
   justify-content: space-between;
-  justify-items: stretch;
+  align-items: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: larger;
 }
@@ -198,4 +233,23 @@ footer {
   width: 350px;
   max-width: 100%;
   display: inline;
+}
+
+#button-create-post {
+  margin-left: 20px;
+}
+#input-search {
+  margin-left: 100px;
+}
+#select-sort-by {
+  margin-right: 20px;
+}
+#select-sort-by,
+#input-search {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  vertical-align: middle;
 }

@@ -17,6 +17,11 @@
 
     <main>
       <section class="tools-grid">
+        <div><button id="button-create-post">Add game</button></div>
+        <div>
+          <label for="input-search"></label>
+          <input type="search" id="input-search" placeholder="Search by title" />
+        </div>
         <label for="select-sort-by">
           Sort by:
           <select id="select-sort-by">
@@ -25,11 +30,6 @@
             <option value="title">Title</option>
           </select>
         </label>
-        <div>
-          <label for="input-search">Search:</label>
-          <input type="search" id="input-search" placeholder="Search by title" />
-        </div>
-        <div><button id="button-create-post">Add game</button></div>
       </section>
       <section id="games" class="grid-container"></section>
     </main>
