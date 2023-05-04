@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
 body {
   margin: 0;
   font-size: medium;
@@ -82,10 +85,12 @@ h2 {
 }
 
 h3 {
+  font-family: 'Open Sans', sans-serif;
   font-weight: 750;
   letter-spacing: 0.1px;
   text-align: center;
-  font-size: x-large;
+  font-size: 35px;
+ 
 }
 
 article.grid-item {
@@ -93,6 +98,7 @@ article.grid-item {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 750;
   font-size: large;
+  border-radius: 25px;
 }
 
 html {
@@ -207,6 +213,14 @@ dialog p {
   font-size: x-large;
 }
 
+dialog select {
+  font-size: medium;
+}
+
+dialog option {
+  font-weight:lighter;
+}
+
 form {
   margin: 2em auto 0;
   background-color: var(--light-green);
@@ -259,4 +273,11 @@ form {
   font-size: 16px;
   margin-right: 10px;
   vertical-align: middle;
+}
+
+.genre-form option {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 1000;
+  line-height: 1.2;
 }
