@@ -11,8 +11,8 @@ async function getGames() {
   return games;
 }
 
-async function createGame(title, body, image, genre) {
-  const newGame = { title, body, image, genre };
+async function createGame(title, body, image, genre, release, pg) {
+  const newGame = { title, body, image, genre, release, pg };
   const json = JSON.stringify(newGame);
   const response = await fetch(`${endpoint}/games.json`, {
     method: "POST",
@@ -28,8 +28,8 @@ async function deleteGame(id) {
   return response;
 }
 
-async function updateGame(id, title, body, image, genre) {
-  const gameToUpdate = { title, body, image, genre };
+async function updateGame(id, title, body, image, genre, release, pg) {
+  const gameToUpdate = { title, body, image, genre, release, pg };
   const json = JSON.stringify(gameToUpdate);
   const response = await fetch(`${endpoint}/games/${id}.json`, {
     method: "PUT",

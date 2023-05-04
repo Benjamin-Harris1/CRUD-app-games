@@ -30,9 +30,11 @@ async function createGameClicked(event) {
   const body = form.body.value;
   const image = form.image.value;
   const genre = form.genre.value;
+  const release = form.release.value;
+  const pg = form.pg.value;
   form.reset();
 
-  const response = await createGame(title, body, image, genre);
+  const response = await createGame(title, body, image, genre, release, pg);
   if (response.ok) {
     console.log("created");
     updateGamesGrid();
@@ -48,9 +50,11 @@ async function updateGameClicked(event) {
   const body = form.body.value;
   const image = form.image.value;
   const genre = form.genre.value;
+  const release = form.release.value;
+  const pg = form.pg.value;
   const id = form.getAttribute("data-id");
 
-  const response = await updateGame(id, title, body, image, genre);
+  const response = await updateGame(id, title, body, image, genre, release, pg);
   if (response.ok) {
     console.log("UPDATED");
     updateGamesGrid();
@@ -92,7 +96,6 @@ function showGame(gameObject) {
         <article class="grid-item">
         <h3>${gameObject.title}</h3>
             <img src="${gameObject.image}" />
-            <p>${gameObject.body}</p>
             <p>Genre: ${gameObject.genre}</p>
             <div class="btns">
             <button class="btn-update">Update</button>
@@ -119,6 +122,8 @@ function updateClicked(gameObject) {
   updateForm.body.value = gameObject.body;
   updateForm.image.value = gameObject.image;
   updateForm.genre.value = gameObject.genre || "";
+  updateForm.release.value = gameObject.release;
+  updateForm.pg.value = gameObject.pg;
   updateForm.setAttribute("data-id", gameObject.id);
   document.querySelector("#dialog-update-game-post").showModal();
 }
