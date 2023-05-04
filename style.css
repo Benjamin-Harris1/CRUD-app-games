@@ -3,6 +3,10 @@
 body {
   margin: 0;
   font-size: medium;
+  background-image: url(https://images.alphacoders.com/245/245451.jpg);
+  background-repeat: repeat; /* don't repeat the background image */
+  background-size: contain; /* scale the background image to cover the entire element */
+  background-position: center; /* center the background image */
 }
 
 header {
@@ -37,7 +41,7 @@ img {
 }
 
 main {
-  background: #3e4852;
+  
   padding: 137px 0 0;
 }
 /* BUTTON STYLING */
@@ -100,7 +104,7 @@ article.grid-item {
 }
 
 html {
-  color: black;
+  color: rgb(255, 255, 255);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   height: 100%;
   width: 100%;
@@ -111,8 +115,9 @@ html {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1em;
-  padding: 1em;
+  gap: 5em;
+  padding: 5em;
+  
 }
 
 @media (min-width: 600px) {
@@ -141,7 +146,7 @@ h3:hover {
 .grid-item {
   box-shadow: 2px 2px 8px black;
   padding: 1.5em;
-  background-color: #79a2d4;
+  background-color: #000000;
   cursor: pointer;
 }
 
@@ -244,7 +249,7 @@ dialog select {
 /* tools */
 
 .tools-grid {
-  background-color: #5669926c;
+  background-color: #0000006c;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   padding: 2em;
   display: flex;
