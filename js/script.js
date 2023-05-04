@@ -10,7 +10,7 @@ window.addEventListener("load", start);
 function start() {
   updateGamesGrid();
 
-  document.querySelector("#form-update-game-post").addEventListener("submit", updateClicked);
+  document.querySelector("#form-update-game-post").addEventListener("submit", updateGameClicked);
   document.querySelector("#button-create-post").addEventListener("click", showCreateGameDialog);
   document.querySelector("#form-create-game-post").addEventListener("submit", createGameClicked);
   document.querySelector("#form-delete-game-post").addEventListener("submit", deleteGameClicked);
@@ -45,6 +45,7 @@ async function createGameClicked(event) {
 }
 
 async function updateGameClicked(event) {
+  event.preventDefault();
   const form = event.target;
   const title = form.title.value;
   const body = form.body.value;
@@ -58,6 +59,7 @@ async function updateGameClicked(event) {
   if (response.ok) {
     console.log("UPDATED");
     updateGamesGrid();
+    document.querySelector("#dialog-update-game-post").close();
   } else {
     console.log(response.status, response.statusText);
     console.log("Error, please try again😎");
