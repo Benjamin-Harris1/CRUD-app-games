@@ -30,6 +30,8 @@ async function createGameClicked(event) {
   const body = form.body.value;
   const image = form.image.value;
   const genre = form.genre.value;
+  const release = form.release.value;
+  const pg = form.pg.value;
   form.reset();
 
   const response = await createGame(title, body, image, genre);
@@ -48,6 +50,8 @@ async function updateGameClicked(event) {
   const body = form.body.value;
   const image = form.image.value;
   const genre = form.genre.value;
+  const release = form.release.value;
+  const pg = form.pg.value;
   const id = form.getAttribute("data-id");
 
   const response = await updateGame(id, title, body, image, genre);
@@ -92,7 +96,6 @@ function showGame(gameObject) {
         <article class="grid-item">
         <h3>${gameObject.title}</h3>
             <img src="${gameObject.image}" />
-            <p>${gameObject.body}</p>
             <p>Genre: ${gameObject.genre}</p>
             <div class="btns">
             <button class="btn-update">Update</button>
