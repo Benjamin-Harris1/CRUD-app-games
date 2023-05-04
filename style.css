@@ -136,8 +136,12 @@ html {
 
 .grid-item:hover {
   box-shadow: 0 8px 16px 2px;
+  
 }
+h3:hover {
+  text-decoration: underline;
 
+}
 .grid-item {
   box-shadow: 2px 2px 8px black;
   padding: 1.5em;
@@ -217,9 +221,7 @@ dialog select {
   font-size: medium;
 }
 
-dialog option {
-  font-weight:lighter;
-}
+
 
 form {
   margin: 2em auto 0;
