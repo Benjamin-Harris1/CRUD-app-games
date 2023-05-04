@@ -170,6 +170,20 @@ dialog {
   z-index: 9999;
 }
 
+#dialog-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 800px;
+  align-self: center;
+}
+
+#dialog-clicked {
+  top: 50%;
+  margin: 2em auto 0;
+  padding: 1em 1em 2em;
+}
+
 #dialog-delete-game-post {
   position: fixed;
   top: 20%;

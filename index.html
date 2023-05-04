@@ -36,7 +36,7 @@
 
     <!--Create game post -->
     <dialog id="dialog-create-game-post">
-      <form>
+      <form method="dialog">
         <button id="dialog-close-button">X</button>
       </form>
       <h2>Add game:</h2>
@@ -65,7 +65,7 @@
 
     <!--Update game post-->
     <dialog id="dialog-update-game-post">
-      <form>
+      <form method="dialog">
         <button id="dialog-close-button">X</button>
       </form>
       <h2>Update game post</h2>
@@ -108,13 +108,13 @@
 
 <!--Clicked game dialog-->
 <dialog id="dialog-clicked">
+  <form method="dialog">
+    <button id="dialog-close-button">X</button>
+  </form>
   <p><strong>Title: </strong><span id="dialog-title"></span></p>
   <img id="dialog-image" src="" alt="" />
-  <p><strong>Description </strong><span id="dialog-description"></span></p>
+  <p><strong>Description: </strong><span id="dialog-description"></span></p>
   <p><strong>Genre: </strong><span id="dialog-genre"></span></p>
   <p><strong>Year of release: </strong><span id="dialog-release-year"></span></p>
   <p><strong>PG-rating: </strong><span id="dialog-pg"></span></p>
-  <form method="dialog">
-    <button id="dialog-btn">Close</button>
-  </form>
 </dialog>
