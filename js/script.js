@@ -10,9 +10,9 @@ window.addEventListener("load", start);
 function start() {
   updateGamesGrid();
 
+  document.querySelector("#form-update-game-post").addEventListener("submit", updateClicked);
   document.querySelector("#button-create-post").addEventListener("click", showCreateGameDialog);
   document.querySelector("#form-create-game-post").addEventListener("submit", createGameClicked);
-  document.querySelector("#form-update-game-post").addEventListener("submit", updateGameClicked);
   document.querySelector("#form-delete-game-post").addEventListener("submit", deleteGameClicked);
   document.querySelector("#form-delete-game-post .btn-cancel").addEventListener("click", deleteCancelClicked);
   document.querySelector("#input-search").addEventListener("keyup", inputSearchChanged);
