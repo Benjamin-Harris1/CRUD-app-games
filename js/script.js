@@ -34,7 +34,7 @@ async function createGameClicked(event) {
   const pg = form.pg.value;
   form.reset();
 
-  const response = await createGame(title, body, image, genre);
+  const response = await createGame(title, body, image, genre, release, pg);
   if (response.ok) {
     console.log("created");
     updateGamesGrid();
@@ -54,7 +54,7 @@ async function updateGameClicked(event) {
   const pg = form.pg.value;
   const id = form.getAttribute("data-id");
 
-  const response = await updateGame(id, title, body, image, genre);
+  const response = await updateGame(id, title, body, image, genre, release, pg);
   if (response.ok) {
     console.log("UPDATED");
     updateGamesGrid();
@@ -122,6 +122,8 @@ function updateClicked(gameObject) {
   updateForm.body.value = gameObject.body;
   updateForm.image.value = gameObject.image;
   updateForm.genre.value = gameObject.genre || "";
+  updateForm.release.value = gameObject.release;
+  updateForm.pg.value = gameObject.pg;
   updateForm.setAttribute("data-id", gameObject.id);
   document.querySelector("#dialog-update-game-post").showModal();
 }
