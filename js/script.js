@@ -104,6 +104,7 @@ function showGame(gameObject) {
 
   document.querySelector("#games article:last-child .btn-delete").addEventListener("click", () => deleteClicked(gameObject));
   document.querySelector("#games article:last-child .btn-update").addEventListener("click", () => updateClicked(gameObject));
+  document.querySelector("#games article:last-child h3").addEventListener("click", () => gameClicked(gameObject));
 }
 
 function deleteClicked(gameObject) {
@@ -120,6 +121,16 @@ function updateClicked(gameObject) {
   updateForm.genre.value = gameObject.genre || "";
   updateForm.setAttribute("data-id", gameObject.id);
   document.querySelector("#dialog-update-game-post").showModal();
+}
+
+function gameClicked(gameObject) {
+  document.querySelector("#dialog-image").src = gameObject.image;
+  document.querySelector("#dialog-title").textContent = gameObject.title;
+  document.querySelector("#dialog-description").textContent = gameObject.body;
+  document.querySelector("#dialog-genre").textContent = gameObject.genre;
+  document.querySelector("#dialog-release-year").textContent = gameObject.release;
+  document.querySelector("#dialog-pg").textContent = gameObject.pg;
+  document.querySelector("#dialog-clicked").showModal();
 }
 
 async function updateGamesGrid() {

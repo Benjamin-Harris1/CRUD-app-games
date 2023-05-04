@@ -44,17 +44,17 @@
         <label for="body">Body:</label>
         <input type="text" id="body" name="body" placeholder="Type the description of your game" required min="5" />
         <label for="genre">Genre:</label>
-       <select id="genre" name="genre">
-        <option value="FPS"> FPS </option>
-        <option value="Action/RPG"> Action/RPG </option>
-        <option value="MMORPG"> MMORPG </option>
-        <option value="MOBA"> MOBA </option>
-        <option value="FPS/BR"> FPS/BR </option>
-        <option value="Strategy card game"> Strategy card game </option>
-        <option value="Action-adventure"> Action-adventure</option>
-        <option value="Puzzle"> Puzzle</option>
-        <option value="Survival"> Survival </option>
-       </select>
+        <select id="genre" name="genre">
+          <option value="FPS">FPS</option>
+          <option value="Action/RPG">Action/RPG</option>
+          <option value="MMORPG">MMORPG</option>
+          <option value="MOBA">MOBA</option>
+          <option value="FPS/BR">FPS/BR</option>
+          <option value="Strategy card game">Strategy card game</option>
+          <option value="Action-adventure">Action-adventure</option>
+          <option value="Puzzle">Puzzle</option>
+          <option value="Survival">Survival</option>
+        </select>
         <label for="image">Image:</label>
         <input type="url" id="image" name="image" placeholder="Paste image URL of your game" />
         <button id="create-game-button">Create game post</button>
@@ -72,16 +72,16 @@
         <input type="text" id="body-update" name="body" placeholder="Type a new description of your game" />
         <label for="genre-update">Genre:</label>
         <select id="genre" name="genre">
-          <option value="FPS"> FPS </option>
-          <option value="Action/RPG"> Action/RPG </option>
-          <option value="MMORPG"> MMORPG </option>
-          <option value="MOBA"> MOBA </option>
-          <option value="FPS/BR"> FPS/BR </option>
-          <option value="Strategy card game"> Strategy card game </option>
-          <option value="Action-adventure"> Action-adventure</option>
-          <option value="Puzzle"> Puzzle</option>
-          <option value="Survival"> Survival </option>
-         </select>
+          <option value="FPS">FPS</option>
+          <option value="Action/RPG">Action/RPG</option>
+          <option value="MMORPG">MMORPG</option>
+          <option value="MOBA">MOBA</option>
+          <option value="FPS/BR">FPS/BR</option>
+          <option value="Strategy card game">Strategy card game</option>
+          <option value="Action-adventure">Action-adventure</option>
+          <option value="Puzzle">Puzzle</option>
+          <option value="Survival">Survival</option>
+        </select>
         <label for="image-update">Image:</label>
         <input type="url" id="image-update" name="image" placeholder="Paste a new image URL of your game" />
         <button id="update-game-button">Update post</button>
@@ -101,3 +101,16 @@
     <script src="js/script.js" type="module"></script>
   </body>
 </html>
+
+<!--Clicked game dialog-->
+<dialog id="dialog-clicked">
+  <p><strong>Title: </strong><span id="dialog-title"></span></p>
+  <img id="dialog-image" src="" alt="" />
+  <p><strong>Description </strong><span id="dialog-description"></span></p>
+  <p><strong>Genre: </strong><span id="dialog-genre"></span></p>
+  <p><strong>Year of release: </strong><span id="dialog-release-year"></span></p>
+  <p><strong>PG-rating: </strong><span id="dialog-pg"></span></p>
+  <form method="dialog">
+    <button id="dialog-btn">Close</button>
+  </form>
+</dialog>
