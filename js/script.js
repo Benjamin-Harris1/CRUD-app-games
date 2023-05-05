@@ -177,12 +177,6 @@ function sortByChanged(event) {
   showGames(games);
 }
 
-// SCROLL TO TOP FUNCTION //
-
-document.querySelector("#top-btn").addEventListener("click", () => {
-  document.documentElement.scrollTop = 0;
-});
-
 async function filterGamesByPegi(selectedValue) {
   const games = await getGames();
   let filteredGames;
@@ -195,3 +189,9 @@ async function filterGamesByPegi(selectedValue) {
   }
   showGames(filteredGames);
 }
+
+// SCROLL TO TOP FUNCTION //
+
+document.querySelector("#top-btn").addEventListener("click", () => {
+  document.documentElement.scrollTop = 0;
+});
