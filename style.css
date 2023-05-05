@@ -5,8 +5,8 @@ body {
   font-size: medium;
   background-image: url(https://images.alphacoders.com/245/245451.jpg);
   background-repeat: repeat;
-  background-size: contain; 
-  background-position:top; 
+  background-size: contain;
+  background-position: top;
 }
 
 header {
@@ -246,6 +246,7 @@ dialog select {
   padding: 1em 1em 2em;
   text-align: center;
   font-size: larger;
+  display: grid;
 }
 
 /* tools */
