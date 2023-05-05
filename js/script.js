@@ -18,6 +18,15 @@ function start() {
   document.querySelector("#input-search").addEventListener("keyup", inputSearchChanged);
   document.querySelector("#input-search").addEventListener("search", inputSearchChanged);
   document.querySelector("#select-sort-by").addEventListener("change", sortByChanged);
+  document.querySelector("#pg").addEventListener("change", filterByPegi);
+  document.querySelector("#pg-filter").addEventListener("click", (event) => {
+    if (event.target.matches("button")) {
+      const selectedValue = event.target.dataset.value;
+      filterByPegi(selectedValue);
+    } else if (event.target.matches("#reset")) {
+      showAllGames();
+    }
+  });
 }
 
 function showCreateGameDialog() {
@@ -173,3 +182,16 @@ function sortByChanged(event) {
 document.querySelector("#top-btn").addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
+
+async function filterByPegi(selectedValue) {
+  const games = await getGames();
+  let filteredGames;
+  if (selectedValue !== "") {
+    filteredGames = games.filter((game) => {
+      return game.pg === selectedValue;
+    });
+  } else {
+    filteredGames = games;
+  }
+  showGames(filteredGames);
+}
